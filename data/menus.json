@@ -1,0 +1,100 @@
+[
+  {
+    "name": "Beef Kebab",
+    "description": "kebab, dish of Middle Eastern or Central Asian origin that typically combines small pieces of meat such as lamb or beef with vegetables on a skewer and is then grilled",
+    "price": "25000",
+    "stock": "100",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrCo3JEzRv_VZUbCplcE5U_tCY_Kuzz-ZK1Q&s"
+  },
+  {
+    "name": "Chicken Kebab",
+    "description": "kebab, dish of Middle Eastern or Central Asian origin that typically combines small pieces of meat such as chicken  with vegetables on a skewer and is then grilled",
+    "price": "20000",
+    "stock": "100",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIGssLAj4Y0KwuKlAwZs0RM_4U1FcO7HmWEA&s"
+  },
+  {
+    "name": "Chicken biryani",
+    "description": "Biryani is a celebratory rice and meat dish cherished in the Indian sub-continent. A traditional biryani consists of fluffy basmati rice layered over tender & succulent pieces of chicken, accompanied with the mesmerizing aromas of spices, herbs & caramelized onion",
+    "price": "35000",
+    "stock": "100",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOOS-iubzGFsVm2BJ3gm4Hl-qwc5UEqq94g&s"
+  },
+  {
+    "name": "Chicken satay",
+    "description": "Originated from Java, Sate or Satay Ayam is a popular Indonesian street food dish of seasoned, skewered and then grilled or barbecued sliced chicken, served with a sauce made of peanut combined with sweet soy",
+    "price": "30000",
+    "stock": "100",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7z1nE48OzH7HYfOj6I66VD1Ws-9fMKEUFXg&s"
+  },
+  {
+    "name": "Lamb satay",
+    "description": "Originated from Java, Sate or Satay kambing is a popular Indonesian street food dish of seasoned, skewered and then grilled or barbecued sliced Lamb, served with a sauce made of peanut combined with sweet soy",
+    "price": "50000",
+    "stock": "100",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3HhSfV3xseggJ6JSp5FvTOzvUOHRf25vqZQ&s"
+  },
+  {
+    "name": "Fried rice",
+    "description": "Fried rice is a dish of cooked rice that has been stir-fried in a wok or a frying pan and is usually mixed with other ingredients such as eggs, vegetables, seafood, or meat. It is often eaten by itself or as an accompaniment to another dish",
+    "price": "25000",
+    "stock": "100",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwa2Cc2RRF-LAKG9FR1lBB8Q3PGcDMuI34bw&s"
+  },
+  {
+    "name": "Kebuli rice",
+    "description": " an Indonesian variation of pilaf. It consists of rice cooked in goat meat broth, goat milk, and clarified butter or most often ghee. It is popular among the Arab community in Indonesia and Betawi people in Jakarta.",
+    "price": "55000",
+    "stock": "100",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTij502Ij4kd_wCpPl_MtkJGCzXvwG8RTze2g&s"
+  },
+  {
+    "name": "Soto ayam",
+    "description": "Soto ayam is a traditional Indonesian dish with ingredients such as chicken, lontong, noodles, and rice vermicelli. Soto ayam is popular in Singapore, Malaysia and Suriname.",
+    "price": "25000",
+    "stock": "100",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS2NFNvyT5KWMUMpzOV36-3hM_iamOzupO4w&s"
+  },
+  {
+    "name": "Soto betawi",
+    "description": "Soto Betawi made of beef or beef offal, cooked in a cow milk or coconut milk broth, with fried potato and tomato.",
+    "price": "35000",
+    "stock": "100",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjLKhkqxX8T9A3E_z6rJqVnOzfHd4eaefZWg&s"
+  },
+  {
+    "name": "Ayam penyet",
+    "description": "Ayam penyet Javanese for squeezed fried chicken is Indonesian more precisely East Javanese cuisine fried chicken dish consisting of fried chicken that is squeezed with the pestle against the mortar to make it softer, and is served with sambal, slices of cucumbers, fried tofu, and tempeh mostly cucumber.",
+    "price": "25000",
+    "stock": "100",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYVxgSSHicabC3aTHzdOzHBUUfJAtkRptQTg&s"
+  },
+  {
+    "name": "Lele goreng",
+    "description": "Pecel lele or pecak lele is an Indonesian deep-fried Clarias catfish dish originating from Lamongan, East Java, Indonesia.",
+    "price": "22000",
+    "stock": "100",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSDzB-dSg1e8eWKYSK-oRfxW8mYvrMZyMhZQ&s"
+  },
+  {
+    "name": "Nila goreng",
+    "description": "Nila goreng is a hot dish consisting of deep fried tilapia fish . Ikan goreng literally means fried fish in Indonesian and Malay languages.",
+    "price": "32000",
+    "stock": "100",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSzCDoBPr1GMG19-ragOhaoU-U0pyip8dlkA&s"
+  },
+  {
+    "name": "Iced Tea",
+    "description": "Iced tea is a form of cold tea.",
+    "price": "10000",
+    "stock": "100",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTJSphsiyMtrQuMVweWxw6gH0PdovqaFhc8A&s"
+  },
+  {
+    "name": "Iced Orange",
+    "description": "It's basically orange juice, water, and sugar, and is refreshingly sweet and citrusy.",
+    "price": "15000",
+    "stock": "100",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgKzhMcSgNi6PU_7nKtH07WQrF50uYFzL1Xw&s"
+  }
+]
