@@ -16,7 +16,7 @@ export function LoginPage() {
                           src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
                         />
                         <h4 className="mb-12 mt-1 pb-1 text-xl font-semibold">
-                          We are The Lotus Team
+                          Welcome to Ayo Makan
                         </h4>
                       </div>
                       <form>
@@ -68,7 +68,6 @@ export function LoginPage() {
                           >
                             Log in
                           </button>
-                          <a href="#!">Forgot password?</a>
                         </div>
                         <div className="flex items-center justify-between pb-6">
                           <p className="mb-0 me-2">Don't have an account?</p>
@@ -85,7 +84,7 @@ export function LoginPage() {
                     </div>
                   </div>
                   <div
-                    className="flex items-center rounded-b-lg lg:w-6/12 lg:rounded-e-lg lg:rounded-bl-none"
+                    className="flex items-center justify-center rounded-b-lg lg:w-6/12 lg:rounded-e-lg lg:rounded-bl-none"
                     style={{
                       background:
                         "linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593)",
@@ -93,15 +92,13 @@ export function LoginPage() {
                   >
                     <div className="px-4 py-6 text-white md:mx-6 md:p-12">
                       <h4 className="mb-6 text-xl font-semibold">
-                        We are more than just a company
+                        What THe DUck !!! Restaurant
                       </h4>
-                      <p className="text-sm">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex
-                        ea commodo consequat.
-                      </p>
+                      <img
+                        alt="Flowbite Logo"
+                        className="h-80"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGZ5SAWiXrfWRz_thrYoVDvFyISB8SXhz5gA&s"
+                      />
                     </div>
                   </div>
                 </div>

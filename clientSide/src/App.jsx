@@ -6,6 +6,8 @@ import {
   decrement,
   incrementByAmount,
 } from "./feature/addorder/orderSlice";
+import Navbar from "./component/NavBar";
+import NavbarDetail from "./component/NavBarDetail";
 
 export default function App() {
   // `store` is the global state variable
@@ -18,14 +20,10 @@ export default function App() {
 
   return (
     <div>
-      <h4>Global Counter : {counter} </h4>
-      {/* to dispatching an action, we can call the action creator */}
-      <button onClick={() => dispatch(increment())}>Increment</button>
-      <button onClick={() => dispatch(decrement())}>Decrement</button>
-      {/* to send the argument to the reducer function just send via function params */}
-      <button onClick={() => dispatch(incrementByAmount(2))}>
-        Increment by 2
-      </button>
+      {/* <Navbar/> */}
+      {/* <LoginPage/> */}
+      <RegisterPage/>
+        
     </div>
   );
 }

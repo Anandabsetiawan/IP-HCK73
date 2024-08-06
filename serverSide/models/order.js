@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Order.belongsTo(User, { foreigkey: "UserId" })
-      Order.belongsTo(Menu, { foreigkey: "MenuId" })
+      Order.belongsTo(models.User, { foreigkey: "UserId" })
+      Order.belongsTo(models.Menu, { foreigkey: "MenuId" })
     }
   }
   Order.init({
