@@ -8,6 +8,7 @@ import {
 } from "./feature/addorder/orderSlice";
 import Navbar from "./component/NavBar";
 import NavbarDetail from "./component/NavBarDetail";
+import CardHome from "./component/CardHome";
 
 export default function App() {
   // `store` is the global state variable
@@ -22,7 +23,8 @@ export default function App() {
     <div>
       {/* <Navbar/> */}
       {/* <LoginPage/> */}
-      <RegisterPage/>
+      {/* <RegisterPage/> */}
+      <CardHome/>
         
     </div>
   );
