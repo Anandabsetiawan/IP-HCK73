@@ -1,4 +1,4 @@
-export function RegisterPage() {
+export default function RegisterPage() {
   return (
     <>
       <section className="gradient-form h-full bg-neutral-200 dark:bg-neutral-700">

@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import {RouterProvider} from "react-router-dom"
 // import { LoginPage } from "./pages/LoginPage";
 // import { RegisterPage } from "./pages/RegisterPage";
 // import {
@@ -10,6 +11,7 @@ import Navbar from "./component/NavBar";
 import NavbarDetail from "./component/NavBarDetail";
 import CardHome from "./component/CardHome";
 import CardDetail from "./component/CardDetail";
+import router from "./router";
 
 export default function App() {
   // `store` is the global state variable
@@ -21,15 +23,9 @@ export default function App() {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      {/* <Navbar/> */}
-      <NavbarDetail/>
-      {/* <LoginPage/> */}
-      {/* <RegisterPage/> */}
-      {/* <CardHome/> */}
-      {/* <CardDetail/> */}
+    
+    <RouterProvider router ={router} />
         
-    </div>
   );
 }
 
