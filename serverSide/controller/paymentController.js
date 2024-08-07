@@ -9,7 +9,9 @@ let snap = new midtransClient.Snap({
 module.exports = class PaymentController {
     static async getMidtransToken(req, res, next) {
         try {
-            const { amount, firstName, lastName, email, phone } = req.body;
+            console.log(req.body,"<<<<<<<<<<<reqbody");
+            
+            const { amount, email } = req.body;
 
             if (!amount) {
                 throw new Error('Amount is required');
@@ -26,10 +28,9 @@ module.exports = class PaymentController {
                     secure: true,
                 },
                 customer_details: {
-                    first_name: firstName,
-                    last_name: lastName,
-                    email: email,
-                    phone: phone,
+       
+                    email: email
+
                 },
             };
 

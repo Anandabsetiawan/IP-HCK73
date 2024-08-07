@@ -2,6 +2,8 @@ const { comparePassword } = require('../helper/bcrypt')
 const { signToken, verifyToken } = require('../helper/jwt')
 const { User, Menu, Order } = require('../models/index')
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+const { OAuth2Client } = require('google-auth-library');
+const client = new OAuth2Client()
 
 // Access your API key as an environment variable (see "Set up your API key" above)
 const genAI = new GoogleGenerativeAI(process.env.THANKS_AJIZ)
@@ -57,21 +59,54 @@ module.exports = class UserController {
             next(error)
         }
     }
+    static async googleLogin(req, res, next) {
+        const { googleToken, email } = req.body;
+        try {
+       
+
+            const ticket = await client.verifyIdToken({
+                idToken: googleToken,
+              
+                // audience: process.env.GOOGLE_CLIENT_ID,// untuk live server
+                audience: "407408718192.apps.googleusercontent.com",// test dummy
+            });
+            const payload = ticket.getPayload();
+            const [user, created] = await User.findOrCreate({
+                where: { email },
+                defaults: {
+                    name: payload.name,
+                    email: payload.email,
+                    picture: payload.picture,
+                    provider: 'google',
+
+                    password: 'google_id'
+                },
+
+                hooks: false
+            });
+
+            const token = signToken({ id: user.id }, process.env.JWT_SECRET);
+            res.status(created ? 201 : 200).json({ access_token: token });
+        } catch (error) {
+            console.log(error);
+
+        }
+    }
     static async gemini(req, res, next) {
         const { query } = req.body
         try {
             const menu = require('../data/menus.json')
-                async function run() {
-                    // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
-                    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+            async function run() {
+                // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
+                const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-                    const prompt = `${JSON.stringify(menu)} find the cheapest food based on menu above`
+                const prompt = `${JSON.stringify(menu)} find the cheapest food based on menu above`
 
-                    const result = await model.generateContent(prompt);
-                    const response = await result.response;
-                    const text = response.text();
-                    console.log(text, "XXXXXX");
-                }
+                const result = await model.generateContent(prompt);
+                const response = await result.response;
+                const text = response.text();
+                console.log(text, "XXXXXX");
+            }
 
             run();
         } catch (error) {
@@ -79,11 +114,11 @@ module.exports = class UserController {
 
         }
     }
-    static async upgradeAccount(req,res,next){
+    static async upgradeAccount(req, res, next) {
         try {
-            res.json({message:"Upgrade Success"})
+            res.json({ message: "Upgrade Success" })
         } catch (error) {
-            
+
         }
     }
 }

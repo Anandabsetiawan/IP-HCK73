@@ -20,6 +20,8 @@ router.post('/register', UserController.register)
 // post /login
 router.post('/login', UserController.login)
 
+router.post('/login/google', UserController.googleLogin)
+
 
 //get/menu
 router.get('/menus',authentication, MenuController.getAllMenu)
@@ -34,7 +36,7 @@ router.get('/gemini', UserController.gemini)
 
 router.patch('/user/me/upgrade',UserController.upgradeAccount)
 
-router.get('/payment/token', PaymentController.getMidtransToken)
+router.post('/payment/token', PaymentController.getMidtransToken)
 
 router.post('https://app.sandbox.midtrans.com/snap/v1/transactions')
 
