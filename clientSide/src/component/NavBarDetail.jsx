@@ -1,7 +1,13 @@
 export default function NavbarDetail() {
   return (
     <>
-      <nav className="bg-gradient-to-r from-red-700 to-orange-600 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+      <nav
+        className="fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600"
+        style={{
+          background:
+            "linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593)",
+        }}
+      >
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a
             className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -12,7 +18,7 @@ export default function NavbarDetail() {
               className="h-12"
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGZ5SAWiXrfWRz_thrYoVDvFyISB8SXhz5gA&s"
             />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            <span className="self-center text-2xl font-semibold whitespace-nowrap text-white hover:text-yellow-500">
               What THe DUck !!! Restaurant
             </span>
           </a>

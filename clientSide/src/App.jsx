@@ -1,14 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
-import { LoginPage } from "./pages/LoginPage";
-import { RegisterPage } from "./pages/RegisterPage";
-import {
-  increment,
-  decrement,
-  incrementByAmount,
-} from "./feature/addorder/orderSlice";
+// import { LoginPage } from "./pages/LoginPage";
+// import { RegisterPage } from "./pages/RegisterPage";
+// import {
+//   increment,
+//   decrement,
+//   incrementByAmount,
+// } from "./feature/addorder/orderSlice";
 import Navbar from "./component/NavBar";
 import NavbarDetail from "./component/NavBarDetail";
 import CardHome from "./component/CardHome";
+import CardDetail from "./component/CardDetail";
 
 export default function App() {
   // `store` is the global state variable
@@ -22,9 +23,11 @@ export default function App() {
   return (
     <div>
       {/* <Navbar/> */}
+      <NavbarDetail/>
       {/* <LoginPage/> */}
       {/* <RegisterPage/> */}
-      <CardHome/>
+      {/* <CardHome/> */}
+      {/* <CardDetail/> */}
         
     </div>
   );

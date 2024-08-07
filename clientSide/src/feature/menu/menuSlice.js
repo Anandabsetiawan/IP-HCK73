@@ -1,7 +1,7 @@
 // src/features/counter/movieSlice.js
 
 import { createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+// import axios from "axios";
 
 // const serverUrl = "https://gc01.projects.khanz1.dev";
 export const menuSlice = createSlice({

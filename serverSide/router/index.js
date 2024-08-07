@@ -22,7 +22,8 @@ router.post('/order/:id')
 router.delete('/order/:id')
 //update/order/by id
 router.put('/order/:id')
-
+//midtrans payment
+router.post('https://app.sandbox.midtrans.com/snap/v1/transactions')
 
 
 
