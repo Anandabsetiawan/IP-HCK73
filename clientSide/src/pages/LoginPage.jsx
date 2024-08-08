@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import MenusData from "../helper/instance";
+import GoogleButton from "../component/googleButton";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -93,6 +94,9 @@ export default function LoginPage() {
                           >
                             Log in
                           </button>
+                        </div>
+                        <div>
+                          <GoogleButton/>
                         </div>
                         <div className="flex items-center justify-between pb-6">
                           <p className="mb-0 me-2">Don't have an account?</p>

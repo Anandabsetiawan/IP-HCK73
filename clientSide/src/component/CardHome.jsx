@@ -4,23 +4,23 @@ import { increment } from "../feature/addorder/orderSlice";
 import addToCart from "../feature/cart/cartSlice";
 import MenusData from "../helper/instance";
 
-export default function CardHome({ menu }) {
+export default function CardHome({ key, menu }) {
   // const menus = useSelector((state) => state.menu.list.data)
-  const dispatch = useDispatch();
-  try {
-    const handleAddToCart = () => {
-      dispatch(
-        addToCart({
-          id: menu.id,
-          name: menu.name,
-          price: menu.price,
-          quantity: 1,
-        })
-      );
-    };
-  } catch (error) {
-    console.log(error.response);
-  }
+  // const dispatch = useDispatch();
+  // try {
+  //   const handleAddToCart = () => {
+  //     dispatch(
+  //       addToCart({
+  //         id: menu.id,
+  //         name: menu.name,
+  //         price: menu.price,
+  //         quantity: 1,
+  //       })
+  //     );
+  //   };
+  // } catch (error) {
+  //   console.log(error.response);
+  // }
 
   return (
     <>
@@ -58,7 +58,7 @@ export default function CardHome({ menu }) {
                 background:
                   "linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593)",
               }}
-              onClick={handleAddToCart}
+              // onClick={handleAddToCart}
             >
               Add Order
             </button>
