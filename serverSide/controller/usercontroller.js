@@ -62,11 +62,11 @@ module.exports = class UserController {
     static async googleLogin(req, res, next) {
         const { googleToken, email } = req.body;
         try {
-       
+
 
             const ticket = await client.verifyIdToken({
                 idToken: googleToken,
-              
+
                 // audience: process.env.GOOGLE_CLIENT_ID,// untuk live server
                 audience: "407408718192.apps.googleusercontent.com",// test dummy
             });
@@ -105,7 +105,8 @@ module.exports = class UserController {
                 const result = await model.generateContent(prompt);
                 const response = await result.response;
                 const text = response.text();
-                console.log(text, "XXXXXX");
+                text = JSON.parse(text)
+                console.log(text);
             }
 
             run();
