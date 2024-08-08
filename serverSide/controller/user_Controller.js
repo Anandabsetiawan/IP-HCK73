@@ -5,8 +5,9 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const { OAuth2Client } = require('google-auth-library');
 const client = new OAuth2Client()
 
+
 // Access your API key as an environment variable (see "Set up your API key" above)
-const genAI = new GoogleGenerativeAI(process.env.THANKS_AJIZ)
+// const genAI = new GoogleGenerativeAI(process.env.THANKS_AJIZ)
 
 
 module.exports = class UserController {
@@ -60,19 +61,17 @@ module.exports = class UserController {
         }
     }
     static async googleLogin(req, res, next) {
-        const { googleToken, email } = req.body;
+        const { googleToken } = req.body;
         try {
-
-
             const ticket = await client.verifyIdToken({
                 idToken: googleToken,
 
-                // audience: process.env.GOOGLE_CLIENT_ID,// untuk live server
-                audience: "407408718192.apps.googleusercontent.com",// test dummy
+                audience: process.env.GOOGLE_CLIENT_ID,// untuk live server
+                // audience: "407408718192.apps.googleusercontent.com",// test dummy
             });
             const payload = ticket.getPayload();
             const [user, created] = await User.findOrCreate({
-                where: { email },
+                where: { email: payload.email },
                 defaults: {
                     name: payload.name,
                     email: payload.email,
@@ -85,31 +84,8 @@ module.exports = class UserController {
                 hooks: false
             });
 
-            const token = signToken({ id: user.id }, process.env.JWT_SECRET);
+            const token = signToken({ id: user.id });
             res.status(created ? 201 : 200).json({ access_token: token });
-        } catch (error) {
-            console.log(error);
-
-        }
-    }
-    static async gemini(req, res, next) {
-        const { query } = req.body
-        try {
-            const menu = require('../data/menus.json')
-            async function run() {
-                // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
-                const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
-                const prompt = `${JSON.stringify(menu)} find the cheapest food based on menu above`
-
-                const result = await model.generateContent(prompt);
-                const response = await result.response;
-                const text = response.text();
-                text = JSON.parse(text)
-                console.log(text);
-            }
-
-            run();
         } catch (error) {
             console.log(error);
 
@@ -119,7 +95,8 @@ module.exports = class UserController {
         try {
             res.json({ message: "Upgrade Success" })
         } catch (error) {
-
+            console.log(error,"<<<<<<<<<<<<<INI GOOGLE");
+            
         }
     }
 }

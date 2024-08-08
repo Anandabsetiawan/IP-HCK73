@@ -1,12 +1,13 @@
 const { User, Order, Menu } = require("../models/index")
+const gemini = require('../helper/gemini')
 
 
 module.exports = class MenuController {
     static async getAllMenu(req, res, next) {
         try {
-            let product = await Menu.findAll()
+            let menus = await Menu.findAll()
 
-            res.status(200).json(product)
+            res.status(200).json(menus)
         } catch (error) {
             next(error)
         }
@@ -21,9 +22,23 @@ module.exports = class MenuController {
             }
             res.status(200).json(menu)
         } catch (error) {
-            console.log(error);
+            // console.log(error);
+            next(error)
+        }
+    }
+    static async getGemini(req, res, next) {
+        const {query} = req.body
+        try {
+            let menus = await Menu.findAll()
+            let data = await gemini(query, JSON.stringify(menus))
+            console.log(data, "<<<<<<<<<<<<<<data");
             
-            // next(error)
+
+            res.status(200).json(data)
+        } catch (error) {
+            console.log(error.message);
+            next(error)
+            
         }
     }
 }
