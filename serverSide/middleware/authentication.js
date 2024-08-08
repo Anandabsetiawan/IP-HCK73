@@ -3,12 +3,12 @@ const { User } = require('../models/index')
 
 async function authentication(req, res, next) {
     try {
-        let access_token = req.headers.authorization
+        let accessToken = req.headers.authorization
 
-        if (!access_token) {
+        if (!accessToken) {
             throw { name: "invalid token" }
         }
-        let [Bearer, token] = access_token.split(" ")
+        let [Bearer, token] = accessToken.split(" ")
 
         if (Bearer !== "Bearer") {
             throw { name: "invalid token" }

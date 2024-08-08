@@ -1,4 +1,4 @@
-const { where } = require('sequelize');
+const { where, Model } = require('sequelize');
 const { User, Order, Menu } = require('../models/index')
 
 module.exports = class OrderController {
@@ -11,6 +11,12 @@ module.exports = class OrderController {
                 },
                 defaults: {
                     quantity: 1,
+                },
+                include: {
+                    model: Menu,
+                    where: {
+                        id: req.body.MenuId
+                    }
                 }
             })
             if (!req.body.MenuId) {

@@ -1,26 +1,23 @@
-// src/features/counter/movieSlice.js
 
 import { createSlice } from "@reduxjs/toolkit";
-// import axios from "axios";
+import MenusData from "../../helper/instance";
 
-// const serverUrl = "https://gc01.projects.khanz1.dev";
 export const menuSlice = createSlice({
-  name: "menu",
+  name: "menus",
   initialState: {
     // `list` property to store the list of movies from `/pub/movies`
-    // list: {
-    //   data: [],
-    //   totalPages: 0,
-    //   currentPage: 0,
-    //   totalData: 0,
-    //   dataPerPage: 0
-    // },
-    // `detail` property to store the detail of a movie from `/pub/movies/:id`
-    // detail: {}
+    list: {
+      data: [],
+
+    },
+   
+    detail: {}
   },
   reducers: {
     setMenus: (state, action) => {
-      state.list.data = action.payload.data;
+      console.log(action.payload,"<<<<<<<<<<<<<<<PAYLOAD");
+      
+      state.list.data = action.payload;
     },
     setMenu: (state, action) => {
       state.detail = action.payload;
@@ -31,3 +28,35 @@ export const menuSlice = createSlice({
 export const { setMenus, setMenu } = menuSlice.actions;
 
 export default menuSlice.reducer;
+
+
+export const fetchMenus = () => {
+  return async (dispatch) => {
+    
+    const { data } = await MenusData({
+      url: '/menus',
+      method: "GET",
+      headers: {
+        Authorization:`Bearer ${localStorage.getItem("accessToken")}`,
+      }
+ 
+    });
+    dispatch(setMenus(data));
+  };
+};
+
+export const fetchMenuById = (MenuId) => {
+
+  return async (dispatch) => {
+
+    const { data } = await MenusData.get({
+      url: '/menus/'+ MenuId,
+      method: "GET",
+      headers: {
+        Authorization:`Bearer ${localStorage.getItem("accessToken")}`,
+      }
+ 
+    });
+    dispatch(setMenu(data));
+  };
+};
