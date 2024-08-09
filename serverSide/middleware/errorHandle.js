@@ -1,7 +1,7 @@
 function errorHandler(error, req, res, next) {
     let status = error.status || 500
     let message = error.message || "Internal error server"
-console.log(error.status, error.name, error.message, "<<<<<<<<<<<<<<<error handler");
+console.log( error.message,error.name, error.status, "<<<<<<<<<<<<<<<error handler");
     switch (error.name) {
         case "SequelizeUniqueConstraintError":
         case "SequelizeValidationError":
