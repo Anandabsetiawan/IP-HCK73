@@ -12,6 +12,8 @@ export default function HomePage() {
   const menus = useSelector((state) => state.menu.list.data);
   const dispatch = useDispatch();
 
+
+
   const searchMenusFromAI = async (e) => {
     e.preventDefault();
     if (!search.trim()) {
@@ -26,7 +28,7 @@ export default function HomePage() {
         data: { query: search },
       });
       console.log(data);
-      
+
       // Assuming the backend returns an array of menu items
       setSearchAi(Array.isArray(data) ? data : []);
     } catch (error) {
@@ -39,6 +41,7 @@ export default function HomePage() {
 
   useEffect(() => {
     dispatch(fetchMenus());
+   
   }, [dispatch]);
 
   const displayedMenus = searchAi.length > 0 ? searchAi : menus;
@@ -75,14 +78,13 @@ export default function HomePage() {
           </div>
         </div>
       </form>
-      
 
       {isLoading ? (
         <div className="text-center mt-8">Loading...</div>
       ) : (
         <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 mt-20">
           {displayedMenus.map((item) => (
-            <CardHome key={item.id} menu={item} />
+            <CardHome key={item.id} menu={item}  />
           ))}
         </main>
       )}

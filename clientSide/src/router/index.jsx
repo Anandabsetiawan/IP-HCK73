@@ -2,6 +2,7 @@ import { createBrowserRouter, redirect } from "react-router-dom";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import HomePage from "../pages/Hompage";
+import ShoppingCart from "../pages/ShoppingCart";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/menu",
         element: <HomePage />,
+      },
+      {
+        path: "/order",
+        element: <ShoppingCart />,
       },
     ],
   },

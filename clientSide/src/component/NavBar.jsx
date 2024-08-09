@@ -1,4 +1,9 @@
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
+  const handleLogout = () => {
+    localStorage.clear();
+  };
   return (
     <>
       <nav
@@ -31,17 +36,18 @@ export default function Navbar() {
                 data-original="#000000"
               />
             </svg>
-            <span className="absolute left-auto -ml-1 top-0 rounded-full bg-red-500 px-1 py-0 text-xs text-white">
-           
-            </span>
+            <span className="absolute left-auto -ml-1 top-0 rounded-full bg-red-500 px-1 py-0 text-xs text-white"></span>
           </span>
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <button
-              className="text-red-600 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-white font-medium rounded-lg text-sm px-4 py-2 text-center"
-              type="button"
-            >
-              Log Out
-            </button>
+            <Link to="/login" onClick={handleLogout}>
+              <button
+                className="text-red-600 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-white font-medium rounded-lg text-sm px-4 py-2 text-center"
+                type="button"
+              >
+                Log Out
+              </button>
+            </Link>
+
             <button
               aria-controls="navbar-sticky"
               aria-expanded="false"

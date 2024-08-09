@@ -5,7 +5,10 @@ const gemini = require('../helper/gemini')
 module.exports = class MenuController {
     static async getAllMenu(req, res, next) {
         try {
-            let menus = await Menu.findAll()
+            let menus = await Menu.findAll({
+                include: Order,
+                
+            })
 
             res.status(200).json(menus)
         } catch (error) {

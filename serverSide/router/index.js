@@ -29,6 +29,7 @@ router.get('/menus',authentication, MenuController.getAllMenu)
 //get/menu/detail
 router.get('/menus/:id',authentication, MenuController.getMenuById)
 //post/order
+router.get('/order/:id',authentication, OrderController.getOrder)
 router.post('/order',authentication, OrderController.addOrder)
 //delete/order
 router.delete('/order',authentication, OrderController.deleteOrder)

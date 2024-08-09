@@ -2,6 +2,21 @@ const { where, Model } = require('sequelize');
 const { User, Order, Menu } = require('../models/index')
 
 module.exports = class OrderController {
+    static async getOrder(req,res,next){
+        console.log(req.params);
+        
+        try {
+            let order = await Order.findByPk(req.params.id)
+            if (!order) {
+                throw { name: 'Menu 404'}
+            }
+            res.status(200).json(order)
+        } catch (error) {
+            // console.log(error);
+            next(error)
+        }
+    }
+
     static async addOrder(req, res, next) {
         try {
             const [order, create] = await Order.findOrCreate({
